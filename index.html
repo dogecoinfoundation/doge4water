@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Doge 4 Water | A Dogecoin Foundation initiative
+		</title>
+		<meta name="description" content="Help The Dogecoin Foundation and raise 40,000,000 DOGE to bring water to those in need.">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/simplegrid.css">
+		<link rel='stylesheet' type="text/css" href='css/magnific-popup.css'>
+		<link rel='stylesheet' type="text/css" href='css/style.css'>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<link rel="icon" type="image/png" href="img/avatar.png">
+		<link href="img/avatar.png" rel="shortcut icon">
+		<link href="img/avatar.png" rel="apple-touch-icon-precomposed">
+		<meta content="on" http-equiv="cleartype">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	</head>
+	<body>
+		--- title: Doge 4 Water --- <!-- this is a {{ site.goal }} -->
+		<div class="header">
+			<div class="grid grid-pad">
+				<div class="col-2-12">&nbsp;</div>
+				<div class="col-8-12">
+					<div class="centered content">
+						<h1>
+							Doge 4 Water
+						</h1>
+						<p>
+							Many Dogecoin users have received their first coins from community faucets. A group of us wondered if we could turn that the fun users get when they receive their first dogecoins into an effort to help the less fortunate. What comes out of a faucet? Dogecoins and Water! 
+						</p>
+						<p>
+							The <strong>Dogecoin Foundation</strong> is happy to announce a partnership with the amazing folks at <strong>TBD</strong> and crowdfunding platform <strong>TBD</strong> to help provide water to people in need.
+						</p>
+						<p>
+							As part of our <strong>"Doge 4 Water"</strong> campaign, we're hoping to raise 40 million DOGE, the equivalent of US$50,000 by "World Water Day" Saturday March 22, 2014.
+						</p>
+						<div class="meter nostripes">
+							<span class="manydoge" style="width: 0%"></span>
+						</div>
+						<p class="suchcurrency">
+							<span><span> of 40,000,000 DOGE target donated so far!
+						</p>
+					</div>
+				</div>
+				<div class="col-2-12">&nbsp;</div>
+			</div>
+		</div><!-- Grid 1/2 -->
+		<div class="grid grid-pad">
+			<div class="col-1-2">
+				<div class="content">
+					<p>
+						Send your DOGE donations directly to the official foundation managed address:
+					</p>
+					<h2 class="address">
+						DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i
+					</h2>
+					<p>
+						Many of us have no idea what it's like to be thirsty. We have plenty of water to drink -- even the water in our toilets is clean!
+					</p>
+					<p>
+						But many people around the world don’t have that luxury. Every day, 5,000 kids die from water-related illnesses before they reach their fifth birthday. But it doesn’t have to be that way. There are simple solutions like drilled wells, spring protections and BioSand Filters that help provide clean water to communities around the world.
+					</p>
+					<p>
+						We started this fundraising campaign to help TBD build these types of projects around the world, and we need your help.
+					</p>
+					<p>
+						Please donate to our campaign -- anything you can give is a huge help.
+					</p>
+					<p>
+						100% of the money will be used to build clean water projects, and when they’re complete, charity: water will send us photos and GPS coordinates so we can see the exact community we helped.
+					</p>
+					<p>
+						Once the campaign is funded, our friends at TBD will post updates including photos of the completed wells, so we can track their progress.
+					</p>
+					<p>
+						... or using TBD where you can donate using USD.
+					</p>
+					<p>
+						<strong>The US$50,000 raised will help sponsor:</strong>
+					</p>
+					<p>
+						<ol>
+							<li>drilling 5 wells</li>
+						</ol>
+					</p>
+					<p>
+						We are working closely with <strong><a href="" target="_blank">TBD</a></strong> to help process both DOGE and USD donations.
+					</p>
+				</div>
+			</div>
+			<div class="col-1-2">
+				<div class="content">
+					<p>
+						<strong><a href="" target="_blank">TBD</a></strong>
+					</p>
+					<p>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="grid grid-pad bottom-pad">
+			<div class="col-1-1">
+				<div class="centered content">
+					<p>
+						<strong>Sponsored by:</strong>
+					</p><a href="http://foundation.dogecoin.com/" target="_blank"><img src="img/foundation.png" class="sponsor"></a><br>
+					TBD<br>
+					TBD
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="js/jquery.doge.js"></script>
+		<script type="text/javascript">
+		$(function() {      
+			target = '40000000';
+			address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i"; 
+
+			percentage = 0;
+			// $('.meter').removeClass('nostripes');
+			// $('.suchcurrency').text('WE DID IT - 40,000,000 DOGE RAISED! STAY TUNED FOR MORE DETAILS!');
+			// $('.address').text('Goal reached. Thank you for your support :)');
+			$($.doge);
+
+
+			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
+	 			$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString() + $(".suchcurrency > span").text());
+	 			$(".suchcurrency").fadeIn();
+	 			percentage = (Math.floor(data.query.results.body.p) / target)*100;
+	 			$(".manydoge").width(percentage + "%");
+
+	 				$(".meter > span").each(function() {
+	 				$(this)
+	 					.data("origWidth", $(this).width())
+	 					.width(0)
+	 					.animate({
+	 						width: $(this).data("origWidth")
+	 					}, 1200);
+	 				});
+	 
+	 		});
+
+			// $(".manydoge").width(percentage + "%");
+
+			// $(".meter > span").each(function() {
+			// 	$(this)
+			// 		.data("origWidth", $(this).width())
+			// 		.width(0)
+			// 		.animate({
+			// 			width: $(this).data("origWidth")
+			// 		}, 1200);
+			// });
+
+		});
+		</script>
+
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52edbf81295bb90e"></script>
+		<script type="text/javascript">
+			addthis.layers({
+				'theme' : 'transparent',
+				'share' : {
+				  'position' : 'left',
+				  'numPreferredServices' : 5
+				}   
+			});
+		</script>
+	</body>
+</html>
