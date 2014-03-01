@@ -22,13 +22,11 @@ a:visited {
 }
 
 .header {
-background-image: url('../img/charitypop.jpg');
-background-color:#000;
 opacity:1.0;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-background-color: #111;
+background-color: #16839d;
 color: #f5f5f5;
 -moz-box-shadow: 0px 2px 9px #888;
 -webkit-box-shadow: 0px 2px 9px #888;

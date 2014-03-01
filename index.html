@@ -20,21 +20,29 @@
 	<body>
 		<div class="header">
 			<div class="grid grid-pad">
-				<div class="col-2-12">&nbsp;</div>
-				<div class="col-8-12">
-					<div class="centered content">
+				<div class="col-5-12">
+					<img src="img/shibe.png">
+				</div>
+				<div class="col-5-12">
+					<div class="content">
 						<h1>
 							Doge 4 Water
 						</h1>
 						<p>
-							Many Dogecoin users have received their first coins from community faucets. A group of us wondered if we could turn that the fun users get when they receive their first dogecoins into an effort to help the less fortunate. What comes out of a faucet? Dogecoins and Water! 
+							Many Dogecoin users have received their first coins from community faucets. A group of us wondered if we could turn the fun of a faucet into an effort to raise moeny and awareness for those without clean drinking water.
 						</p>
 						<p>
-							The <strong>Dogecoin Foundation</strong> is happy to announce a partnership with the amazing folks at <strong>TBD</strong> and crowdfunding platform <strong>TBD</strong> to help provide water to people in need.
+							The <strong>Dogecoin Foundation</strong> is working with the wonderful community to help provide water to people in need.
 						</p>
 						<p>
-							As part of our <strong>"Doge 4 Water"</strong> campaign, we're hoping to raise 40 million DOGE, the equivalent of US$50,000 by "World Water Day" Saturday March 22, 2014.
+							As part of our <strong>"Doge 4 Water"</strong> campaign, we're hoping to raise 40 million DOGE by "World Water Day" Saturday March 22, 2014 (equivalent of US$50,000).
 						</p>
+					</div>
+				</div>
+			</div>
+			<div class="grid grid-pad">
+				<div class="col-1-1">
+					<div class="content centered">
 						<div class="meter nostripes">
 							<span class="manydoge" style="width: 0%"></span>
 						</div>
@@ -43,11 +51,12 @@
 						</p>
 					</div>
 				</div>
-				<div class="col-2-12">&nbsp;</div>
 			</div>
+
 		</div><!-- Grid 1/2 -->
 		<div class="grid grid-pad">
-			<div class="col-1-2">
+			<div class="col-3-12">&nbsp;</div>
+			<div class="col-6-12">
 				<div class="content">
 					<p>
 						Send your DOGE donations directly to the official foundation managed address:
@@ -56,13 +65,7 @@
 						DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i
 					</h2>
 					<p>
-						Many of us have no idea what it's like to be thirsty. We have plenty of water to drink -- even the water in our toilets is clean!
-					</p>
-					<p>
-						But many people around the world don’t have that luxury. Every day, 5,000 kids die from water-related illnesses before they reach their fifth birthday. But it doesn’t have to be that way. There are simple solutions like drilled wells, spring protections and BioSand Filters that help provide clean water to communities around the world.
-					</p>
-					<p>
-						We started this fundraising campaign to help TBD build these types of projects around the world, and we need your help.
+						We started this fundraising campaign to help charity: water build these types of projects around the world, and we need your help.
 					</p>
 					<p>
 						Please donate to our campaign -- anything you can give is a huge help.
@@ -71,33 +74,23 @@
 						100% of the money will be used to build clean water projects, and when they’re complete, charity: water will send us photos and GPS coordinates so we can see the exact community we helped.
 					</p>
 					<p>
-						Once the campaign is funded, our friends at TBD will post updates including photos of the completed wells, so we can track their progress.
-					</p>
-					<p>
-						... or using TBD where you can donate using USD.
+						Once the campaign is funded, our friends at charity: water will post updates including photos of the completed wells, so we can track their progress.
 					</p>
 					<p>
 						<strong>The US$50,000 raised will help sponsor:</strong>
 					</p>
 					<p>
 						<ol>
-							<li>drilling 5 wells</li>
+							<li>drilling wells</li>
+							<li>providing clean water to those in need</li>
 						</ol>
 					</p>
 					<p>
-						We are working closely with <strong><a href="" target="_blank">TBD</a></strong> to help process both DOGE and USD donations.
+						We will be converting DOGE to USD before the donation is made.
 					</p>
 				</div>
 			</div>
-			<div class="col-1-2">
-				<div class="content">
-					<p>
-						<strong><a href="" target="_blank">TBD</a></strong>
-					</p>
-					<p>
-					</p>
-				</div>
-			</div>
+			<div class="col-3-12">&nbsp;</div>
 		</div>
 		<div class="grid grid-pad bottom-pad">
 			<div class="col-1-1">
@@ -105,8 +98,6 @@
 					<p>
 						<strong>Sponsored by:</strong>
 					</p><a href="http://foundation.dogecoin.com/" target="_blank"><img src="img/foundation.png" class="sponsor"></a><br>
-					TBD<br>
-					TBD
 				</div>
 			</div>
 		</div>
@@ -119,10 +110,11 @@
 			address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i"; 
 
 			percentage = 0;
+	        $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
 			// $('.meter').removeClass('nostripes');
 			// $('.suchcurrency').text('WE DID IT - 40,000,000 DOGE RAISED! STAY TUNED FOR MORE DETAILS!');
 			// $('.address').text('Goal reached. Thank you for your support :)');
-			$($.doge);
+			// $($.doge);
 
 
 			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
