@@ -85,13 +85,13 @@ box-shadow: 0px 2px 9px #888;
 	  linear,
 	  left bottom,
 	  left top,
-	  color-stop(0, rgb(43,194,83)),
-	  color-stop(1, rgb(84,240,84))
+	  color-stop(0, rgb(113,221,249)),
+	  color-stop(1, rgb(51,165,192))
 	 );
 	background-image: -moz-linear-gradient(
 	  center bottom,
-	  rgb(43,194,83) 37%,
-	  rgb(84,240,84) 69%
+	  rgb(113,221,249) 37%,
+	  rgb(51,165,192) 69%
 	 );
 	-webkit-box-shadow: 
 	  inset 0 2px 9px  rgba(255,255,255,0.3),
