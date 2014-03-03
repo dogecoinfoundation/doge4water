@@ -32,7 +32,12 @@
         setInterval(function() {
 
             $('<span style="position: absolute; display: none; left: ' + Math.random() * 100 + '%;top: ' + Math.random() * 100 + '%;font-size: ' + Math.max(24, (Math.random() * 50 + 50)) + 'px; color: rgb(' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ');">' + r(dogefix) +
+<<<<<<< HEAD
+                '</span>').appendTo('.such.overlay').fadeIn('fast').delay(1000).fadeOut('fast');
+        }, 500);
+=======
                 '</span>').appendTo('.such.overlay').fadeIn('fast').delay(5000).fadeOut('fast');
         }, 3000);
+>>>>>>> 4c354d6ac611cbd681f05a17684c7fbb3f74a3fa
     };
 })(jQuery);
