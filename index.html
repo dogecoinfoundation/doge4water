@@ -90,6 +90,7 @@
 			
 					<ul>
 						<li>drilling 5 wells</li>
+						<li>providing clean water to those in need</li>
 					</ul>
 
 				</section>
@@ -107,12 +108,13 @@
 
 			<footer>
 				<div class="container">
-					<p>
-						<strong>Sponsored by</strong>
-						<!-- To do: get Foundation logo with transparent background + sponsor logo -->
-						<!--<a href="http://foundation.dogecoin.com/" target="_blank"><img src="img/foundation.png" class="sponsor"/></a>
-						<a href="#" target="_blank"><img src="" class="sponsor"/></a>-->
-					</p>
+					<p>Sponsored by</p>
+					<a href="http://foundation.dogecoin.com/" target="_blank">
+						<img src="./images/dogecoin-foundation.jpg" class="sponsor"/>
+						<p>The Dogecoin Foundation</p>
+					</a>
+					<!-- To do: get sponsor logo -->
+					<!--<a href="#" target="_blank"><img src="" class="sponsor"/></a>-->
 				</div>
 			</footer>
 
@@ -124,32 +126,34 @@
 		<!--<script type="text/javascript" src="js/jquery.doge.js"></script>-->
 		<script type="text/javascript">
 		$(function() {      
-			target = '40000000';
-			address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i"; 
+			target = '20000000';
+	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
+			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
+				$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString());
+				$(".suchcurrency").fadeIn();
+				percentage = (Math.floor(data.query.results.body.p) / target)*100;
+				$(".manydoge").width(percentage + "%");
 
-			percentage = 0;
-			// $('.meter').removeClass('nostripes');
-			// $('.suchcurrency').text('WE DID IT - 40,000,000 DOGE RAISED! STAY TUNED FOR MORE DETAILS!');
-			// $('.address').text('Goal reached. Thank you for your support :)');
-			$($.doge);
+					$(".meter > span").each(function() {
+					$(this)
+						.data("origWidth", $(this).width())
+						.width(0)
+						.animate({
+							width: $(this).data("origWidth")
+						}, 1200);
+					});
 
+			});
 
-			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20%27http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F%27" + address + "'&format=json", function(data) {
-	 			$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString() + $(".suchcurrency > span").text());
-	 			$(".suchcurrency").fadeIn();
-	 			percentage = (Math.floor(data.query.results.body.p) / target)*100;
-	 			$(".manydoge").width(percentage + "%");
+			$('.popup-vimeo').magnificPopup({
+				disableOn: 700,
+				type: 'iframe',
+				mainClass: 'mfp-fade',
+				removalDelay: 160,
+				preloader: false,
+				fixedContentPos: false
+			});
 
-	 				$(".meter > span").each(function() {
-	 				$(this)
-	 					.data("origWidth", $(this).width())
-	 					.width(0)
-	 					.animate({
-	 						width: $(this).data("origWidth")
-	 					}, 1200);
-	 				});
-	 
-	 		});
 
 	 		$('#learn-more').on('click', function() {
 				$('html').scrollTo('#page-content', 500);

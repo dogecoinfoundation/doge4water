@@ -21,7 +21,7 @@ header {
 	width: 100%;
 	height: 100%;
 	padding-bottom: 10em;
-	background: #9fe29e url(../images/water.png) left bottom repeat-x;
+	background: #9fe29e url(../images/water.png) center bottom repeat-x;
 }
 
 .container {
@@ -52,6 +52,7 @@ header img {
 	display: block;
 	margin: 0 auto;
 	max-height: 40%;
+	max-width: 100%;
 }
 
 header h2 {
@@ -63,6 +64,8 @@ header h2 {
 	width: 100%;
 }
 
+footer:before,
+footer:after,
 .container:before,
 .container:after,
 #donate:before,
@@ -71,12 +74,14 @@ header h2 {
 	display: table;
 }
 
+footer:after,
 .container:after,
 #donate:after {
 	clear: both;
 }
 
-#donate h2,
+h3,
+footer a p,
 h2 {
 	font-size: 2em;
 	line-height: 1.25em;
@@ -86,9 +91,8 @@ h2 {
 	letter-spacing: -0.05em;
 }
 
-#donate h2 {
+.donate-type h2 {
 	font-size: 3em; 
-	font-weight: 600; 	
 	margin: 0;
 }
 
@@ -103,7 +107,7 @@ h2 {
 	width: 45%;
 }
 
-footer,
+footer p:first-child,
 .or {
 	font-weight: normal;
 	font-family: "Georgia", serif;
@@ -114,11 +118,53 @@ footer,
 	width: 10%;
 	font-size: 1.5em;
 	text-align: center;
+	line-height: 2.5em;
 }
+
+
+
+.button:active,
+.button:visited,
+.button {
+	display: inline-block;
+	border: 0.15625em solid rgba(0, 0, 0, 0.25);
+	padding: 0.625em 1.25em;
+	text-decoration: none;
+	border-radius: 0.3125em;
+	background: #f4997c;
+	color: rgba(0, 0, 0, 0.75);
+	transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+	font-weight: 600;
+}
+
+a.button:hover {
+	color: rgba(0, 0, 0, 0.85);
+	background: #da7150;
+	transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+}
+
+p.button,
+p.button:hover {
+	color: rgba(0, 0, 0, 0.75);
+	background: transparent;
+	border-style: dashed;
+	transition: border-color 0.5s;
+	-webkit-transition: border-color 0.5s;
+	border-color: #f4997c;
+}
+
+p.button:hover {
+	transition: border-color 0.5s;
+	-webkit-transition: border-color 0.5s;
+	border-color: #da7150;
+}
+
 
 #learn-more {
 	position: absolute;
-	bottom: 3.75em;
+	bottom: 3.125em;
 	left: 50%;
 	margin-left: -15.625em;
 	width: 31.25em;
@@ -126,12 +172,13 @@ footer,
 }
 
 #learn-more h2 {
+	margin: 0;
 	transition: color 0.5s;
 	-webkit-transition: color 0.5s;	
 }
 
 #learn-more:hover h2 {
-	color: rgb(39, 38, 35);
+	color: rgba(0, 0, 0, 0.8);
 	transition: color 0.5s;
 	-webkit-transition: color 0.5s;
 }
@@ -141,6 +188,15 @@ footer,
 	margin: 0 auto;
 	width: 50px;
 	height: 50px;
+	opacity: 0.7;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+}
+
+#learn-more:hover img {
+	opacity: 1;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;	
 }
 
 
@@ -155,7 +211,10 @@ footer,
 
 
 
-
+h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.83333333em;
+}
 
 
 p,
@@ -176,7 +235,7 @@ section {
 }
 
 
-
+footer .container div,
 #page-content section,
 #page-content img {
 	width: 48%;
@@ -222,17 +281,12 @@ a:hover {
 
 footer {
 	margin-top: 2.5em;
-	background: rgba(0, 0, 0, 0.5);
-	padding: 1.25em 0;
+	background: #33a5c0;
+	padding: 2.5em 0 3.75em 0;
 	color: #fff;
 }
 
-footer strong { 
-	display: block; 
-	clear: both;
-}
-
-footer p {
+footer {
 	text-align: center;
 }
 
@@ -240,46 +294,41 @@ footer a {
 	display: inline-block;
 }
 
-
-.button:active,
-.button:visited,
-.button {
-	display: inline-block;
-	border: 0.15625em solid rgba(39, 38, 35, 0.75);
-	padding: 0.625em 1.25em;
-	text-decoration: none;
-	border-radius: 0.3125em;
-	color: rgba(39, 38, 35, 0.75);
-	transition: background-color 0.5s;
-	-webkit-transition: background-color 0.5s;
-	font-weight: 600;
+footer a img,
+footer a p {
+	margin: 0 auto;
+	display: block;
+	clear: both;
 }
 
-a.button:hover {
-	color: rgba(39, 38, 35, 0.75);
-	transition: background-color 0.5s;
-	-webkit-transition: background-color 0.5s;
-	background-color: rgba(255, 255, 255, 0.35);
+#page-content footer a img {
+	max-width: 6.25em;
+	float: none;
+	margin-bottom: 0.625em;
 }
 
-p.button {
-	border-style: dashed;
+footer a p {
+	font-size: 1.25em;
+	color: rgba(255, 255, 255, 0.8);
+	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
 }
 
-.sponsor {
-	max-width: 300px;
-	width: 100%;
-	border: none;
+footer a:hover p {
+	color: #fff;
+	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
 }
 
-.bottom-pad {
-	padding-bottom: 40px;
-}
+
+
+
+/* meter */
 
 .meter { 
-	height: 45px;  /* Can be anything */
+	height: 45px;  
 	position: relative;
-	margin: 0 0 1.25em 0; /* Just for demo spacing */
+	margin: 0 0 1.25em 0; 
 	background: rgba(39, 38, 35, 0.75);
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
@@ -301,7 +350,7 @@ p.button {
 	     -moz-border-radius-bottomleft: 20px;
 	            border-top-left-radius: 20px;
 	         border-bottom-left-radius: 20px;
-	background-color: rgb(43,194,83);
+	background-color: #71ddf9;
 
 	position: relative;
 	overflow: hidden;
@@ -426,11 +475,53 @@ p.button {
 		clear: both;
 	}
 
+	.or {
+		line-height: 1.25em;
+		margin-bottom: 0.8333333em;
+	}
 
+	h1 {
+		font-size: 2em;
+	}
 
 	#donate h2 {
 		font-size: 1.5em;
 	}
 
+	header {
+		padding-bottom: 5em;
+	}
+
+	#learn-more {
+		display: none;
+	}
+
 }
 
+@media only screen and (max-width: 36em) {
+
+	header,
+	#page-content {
+		position: relative;
+		top: auto;
+		left: 0;
+		height: auto;
+	}
+
+	.container {
+		padding: 0 2.5em;
+	}
+
+	p {
+		font-size: 0.85em;
+	}
+
+	#shibe-island .container {
+		background: none;
+	}
+
+	p.button {
+		max-width: 100%;
+		word-wrap: break-word;
+	}
+}
