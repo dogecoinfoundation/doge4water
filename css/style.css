@@ -242,6 +242,10 @@ footer .container div,
 	float: left;
 }
 
+#page-content section {
+	width: 75%;
+}
+
 .left {
 	float: left;
 }
@@ -250,28 +254,31 @@ footer .container div,
 	float: right;
 }
 
+#page-content .center {
+	float: none;
+	margin: 0 auto;
+}
+
 
 .suchcurrency { 
 	font-weight: bold;
-}
-
-.centered {
 	text-align: center;
 }
 
+
 a {
-	color: #2980b9;
+	color: #009640;
 	text-decoration: none;
 	transition: color 0.5s;
 	-webkit-transition: color 0.5s;
 }
 
 a:visited {
-	color: #005a94;
+	color: #009640;
 }
 
 a:hover {
-	color: #329fe8;
+	color: #fff;
 	transition: color 0.5s;
 	-webkit-transition: color 0.5s;
 }
@@ -293,6 +300,8 @@ footer {
 footer a {
 	display: inline-block;
 }
+
+
 
 footer a img,
 footer a p {
