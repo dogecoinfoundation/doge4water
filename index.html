@@ -44,7 +44,7 @@
 				<div class="or">&mdash; or &mdash;</div>
 				<div class="donate-type">
 					<h2>Donate Dollars</h2>
-					<p><a href="#" target="_blank" class="button">Visit TBD</a></p>
+					<p><a href="#" target="_blank" class="partner button">Visit our Partner</a></p>
 				</div>
 				<div id="learn-more">
 					<h2>Learn more</h2>
@@ -69,6 +69,7 @@
 					As part of our <strong>"Doge 4 Water"</strong> campaign, we're hoping to raise 40 million DOGE by "World Water Day" Saturday March 22, 2014 (equivalent of US$50,000).
 					</p>
 				</section>
+
 				<!-- To do: image here -->
 				<img src="./images/placeholder.png" alt="" class="right" />
 
@@ -103,6 +104,14 @@
 					<p>
 						We will be converting DOGE to USD before the donation is made.
 					</p>
+				</section>
+
+				<section class="left">
+					<h2>Who are you?</h2>
+					<p>
+						Hi, I'm <a href="http://twitter.com/ericnakagawa">Eric Nakagawa</a>. I love <a href="http://cheezburger">memes</a> (i built icanhascheezburger lolz). I love <a href="http://reddit.com/r/dogecoin">dogecoin</a> (such community). I love helping to raise awareness and $ for things that make the world better - like clean water.
+					</p>
+					<p>Design and layout by <a href="http://twitter.com/christinericks">Christine Ricks</a></p>
 				</section>
 
 				<!-- To do: sponsor copy here -->
@@ -140,6 +149,9 @@
 		<!--<script type="text/javascript" src="js/jquery.doge.js"></script>-->
 		<script type="text/javascript">
 		$(function() {
+			$('.partner').click(function(){
+				alert("We don't have a partner yet. Know someone? Ping me on twitter @ericnakagawa")
+			});
 			target = '40000000';
 	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
 			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
@@ -166,5 +178,17 @@
 		</script>
 		<!-- To do: uncomment once ready for production. Currently errors out on local -->
 		<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52edbf81295bb90e"></script> -->
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-84166-30', 'doge4water.org');
+		  ga('send', 'pageview');
+
+		</script>
+
 	</body>
 </html>
