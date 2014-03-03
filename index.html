@@ -34,7 +34,9 @@
 					<div class="meter">
 						<span class="manydoge" style="width: 0%"></span>
 					</div>
-					<p class="suchcurrency centered"><span></span> of 40,000,000 DOGE target donated so far!</p>
+					<p class="suchcurrency">
+						<span><span> of 40,000,000 DOGE target donated so far!
+					</p>
 				</div>
 				<div class="donate-type">	
 					<h2>Donate DOGE</h2>
@@ -128,7 +130,6 @@
 	 			$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString() + $(".suchcurrency > span").text());
 	 			$(".suchcurrency").fadeIn();
 	 			percentage = (Math.floor(data.query.results.body.p) / target)*100;
-	 			alert(percentage);
 	 			$(".manydoge").width(percentage + "%");
 
 	 				$(".meter > span").each(function() {
