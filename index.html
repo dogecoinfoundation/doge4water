@@ -31,10 +31,10 @@
 				<div class="container">
 
 				<div id="meter-wrap">
-					<div class="meter">
+					<div class="meter nostripes">
 						<span class="manydoge" style="width: 0%"></span>
 					</div>
-					<p class="suchcurrency">
+					<p class="suchcurrency centered">
 						<span><span> of 40,000,000 DOGE target donated so far!
 					</p>
 				</div>
@@ -94,13 +94,14 @@
 				</section>
 
 				<!-- To do: sponsor copy here -->
-				<section class="left">
+				<!--<section class="left">
 					<h2>About TBD</h2>
 
 			  		<p>We are working closely with <strong><a href="" target="_blank">TBD</a></strong> to help process both DOGE and USD donations.</p>
 				</section>
+				-->
 				<!-- To do: image here -->
-				<img src="./images/placeholder.png" alt="" class="right" />
+				<!-- <img src="./images/placeholder.png" alt="" class="right" /> -->
 
 			</div>
 
@@ -113,6 +114,9 @@
 					</a>
 					<!-- To do: get sponsor logo -->
 					<!--<a href="#" target="_blank"><img src="" class="sponsor"/></a>-->
+					<p>
+						<a href="http://artcorgi.com/product/thanh-ma-momiji/">Shiba Inu Drawing by Thanh Ma</a>
+					</p>
 				</div>
 			</footer>
 
@@ -124,7 +128,7 @@
 		<!--<script type="text/javascript" src="js/jquery.doge.js"></script>-->
 		<script type="text/javascript">
 		$(function() {
-			target = '40000';
+			target = '40000000';
 	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
 			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
 	 			$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString() + $(".suchcurrency > span").text());
