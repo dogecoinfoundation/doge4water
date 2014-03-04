@@ -301,7 +301,13 @@ footer a {
 	display: inline-block;
 }
 
+p.button {
+	margin: 0 0 5px 0;
+	padding: 10px 20px 10px 20px;
+}
 
+p.button a {
+}
 
 footer a img,
 footer a p {
@@ -531,5 +537,6 @@ footer a:hover p {
 	p.button {
 		max-width: 100%;
 		word-wrap: break-word;
+		margin: 0px;
 	}
 }

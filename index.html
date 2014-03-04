@@ -46,12 +46,21 @@
 				<div class="donate-type">	
 					<h2>Donate DOGE</h2>
 					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i">DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=50&message=doge4water%20donation&label=doge4water">25</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=100&message=doge4water%20donation&label=doge4water">100</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=500&message=doge4water%20donation&label=doge4water">500</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=1000&message=doge4water%20donation&label=doge4water">1k</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=2500&message=doge4water%20donation&label=doge4water">2.5k</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=5000&message=doge4water%20donation&label=doge4water">5k</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=10000&message=doge4water%20donation&label=doge4water">10k</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=100000&message=doge4water%20donation&label=doge4water">100k</a></p>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i&amount=1000000&message=doge4water%20donation&label=doge4water">1M</a></p>
 				</div>
-				
+
 				<div class="or">&mdash; or &mdash;</div>
 				<div class="donate-type">
 					<h2>Donate Dollars</h2>
-					<p><a href="http://my.charitywater.org/doge4water" class="partner button">Donate via charity: water</a></p>
+					<p><a href="http://my.charitywater.org/doge4water" class="partner button">Donate via charity:water</a></p>
 				</div>
 				<div id="learn-more">
 					<h2>Learn more</h2>
@@ -156,9 +165,10 @@
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js"></script>
 		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-		<!--<script type="text/javascript" src="js/jquery.doge.js"></script>-->
+		<script type="text/javascript" src="js/jquery.doge.js"></script>
 		<script type="text/javascript">
 		$(function() {
+			$($.doge);
 			target = '40000000';
 	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
 			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {

@@ -6,7 +6,7 @@
         var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
 
         //  much array
-        tings = $.extend(['doge', 'shibe', 'help', 'good deed', 'thankful', 'complete', 'yay', 'dogecoin', 'well', 'drinking', 'water'], tings);
+        tings = $.extend(['doge', 'shibe', 'good deed', 'thankful', 'complete', 'yay', 'dogecoin', 'water well', 'drinking', 'clean water'], tings);
 
         var r = function(arr) {
             if (!arr) arr = tings;
@@ -31,7 +31,7 @@
 
         setInterval(function() {
             $('<span style="position: absolute; display: none; left: ' + Math.random() * 100 + '%;top: ' + Math.random() * 100 + '%;font-size: ' + Math.max(24, (Math.random() * 50 + 50)) + 'px; color: rgb(' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ', ' + Math.round(Math.random() * 255) + ');">' + r(dogefix) +
-                '</span>').appendTo('.such.overlay').fadeIn('fast').delay(1000).fadeOut('fast');
-        }, 500);
+                '</span>').appendTo('.such.overlay').fadeIn('fast').delay(2000).fadeOut('fast');
+        }, 10000);
     };
 })(jQuery);
