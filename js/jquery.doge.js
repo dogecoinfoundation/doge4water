@@ -6,7 +6,7 @@
         var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
 
         //  much array
-        tings = $.extend(['doge', 'shibe', 'help', 'good deed', 'thankful', 'complete', 'yay', 'dogecoin', 'well', 'drinking', 'water'], tings);
+        tings = $.extend(['doge', 'shibe', 'help', 'good deed', 'thankful', 'yay', 'dogecoin', 'well', 'drinking', 'water'], tings);
 
         var r = function(arr) {
             if (!arr) arr = tings;
