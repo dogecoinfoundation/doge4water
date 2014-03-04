@@ -2,7 +2,7 @@
 	box-sizing: border-box; 
 }
 body { 
-	font-family: "Lucida Grande", "Tahoma", sans-serif;
+	font-family: "Comic Sans MS", "Comic Sans", "Lucida Grande", "Tahoma", sans-serif;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;

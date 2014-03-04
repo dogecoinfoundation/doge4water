@@ -3,7 +3,7 @@
     //  such plugin
     $.doge = function(tings) {
         //  very jquery
-        var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
+        var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans');
 
         //  much array
         tings = $.extend(['doge', 'shibe', 'good deed', 'thankful', 'complete', 'yay', 'dogecoin', 'water well', 'drinking', 'clean water'], tings);
