@@ -41,7 +41,7 @@
 						<span class="manydoge" style="width: 0%"></span>
 					</div>
 					<p class="suchcurrency centered">
-						<span><span> of Ð40,000,000 donated so far!
+						<span><span>
 					</p>
 				</div>
 				<div class="donate-type">	
@@ -66,6 +66,7 @@
 				<div class="donate-type">
 					<h2>Donate Dollars</h2>
 					<p><a href="http://my.charitywater.org/doge4water" class="partner button">Donate via charity:water</a></p>
+					<h5>Twitter tips by <a href="http://tipdoge.info">tipdoge</a> to <a href="http://twitter.com/doge4water">@doge4water</a></h5>
 				</div>
 				<div id="learn-more">
 					<h2>Learn more</h2>
@@ -187,6 +188,11 @@
 						<img src="./images/dogecoin-foundation.jpg" />
 						<p>The Dogecoin Foundation</p>
 					</a>
+
+					<p>Benefiting</p>
+					<a href="http://charitywater.com/" target="_blank" class="sponsor">
+						<p>charity: water</p>
+					</a>
 			
 				</div>
 				<small><a href="http://priceofdoge.com">1 doge = 1 doge</a></small>
@@ -200,29 +206,50 @@
 		<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 		<script type="text/javascript" src="js/jquery.doge.js"></script>
 		<script type="text/javascript">
-		$(function() {
-			// $($.doge);
-			target = '40000000';
-	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
-			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
-	 			$(".suchcurrency > span").text(Math.floor(data.query.results.body.p).toLocaleString() + $(".suchcurrency > span").text());
-	 			$(".suchcurrency").fadeIn();
-	 			percentage = (Math.floor(data.query.results.body.p) / target)*100;
+		function update_percentage(balance, target) {
+
+	 			percentage = (Math.floor(balance) / target)*100;
+
+	 			$(".suchcurrency > span").text(Math.floor(balance).toLocaleString() + message_append);
+
 	 			$(".manydoge").width(percentage + "%");
 
-	 				$(".meter > span").each(function() {
-	 				$(this)
-	 					.data("origWidth", $(this).width())
-	 					.width(0)
-	 					.animate({
-	 						width: $(this).data("origWidth")
-	 					}, 1200);
-	 				});
-	 
+ 				$(".meter > span").each(function() {
+ 				$(this)
+ 					.data("origWidth", $(this).width())
+ 					.width(0)
+ 					.animate({
+ 						width: $(this).data("origWidth")
+ 					}, 1200);
+ 				});
+
+		}
+		$(function() {
+			// $($.doge);
+			message_append = ' of Ð40,000,000 donated so far!';
+			target = '40000000';
+			balance = 0;
+			tipdoge = 0;
+	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
+			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
+	 			balance = parseInt(data.query.results.body.p);
+	 			$(".suchcurrency").fadeIn();
+
+				update_percentage(balance, target); 
+
+				setTimeout(function() {
+					$.getJSON( "http://tipdoge.info/api/?q=doge4water.org", function( data ) {
+						$.each( data, function( key, val ) {
+							if(! isNaN(val[1]))
+							{
+								tipdoge_balance = Math.ceil(val[1]);
+								balance += tipdoge_balance;
+								update_percentage(balance, target); 
+							}
+						});
+					});
+				}, 500);
 	 		});
-			$('p').on('click', function(){
-				console.log($(this).child('a'));
-			});
 
 	 		$('#learn-more').on('click', function() {
 				$('html').scrollTo('#page-content', 500);
