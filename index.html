@@ -45,28 +45,15 @@
 					</p>
 				</div>
 				<div class="donate-type">	
-					<h2>Donate DOGE</h2>
-					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i">DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i</a></p>
-					<p class="doge-amounts">
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=25&message=doge4water%20donation&label=doge4water" class="button">Ð25</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=100&message=doge4water%20donation&label=doge4water" class="button">Ð100</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=500&message=doge4water%20donation&label=doge4water" class="button">Ð500</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=1000&message=doge4water%20donation&label=doge4water" class="button">Ð1k</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=2500&message=doge4water%20donation&label=doge4water" class="button last">Ð2.5k</a>
-
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=5000&message=doge4water%20donation&label=doge4water" class="button bottom">Ð5k</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=10000&message=doge4water%20donation&label=doge4water" class="button bottom">Ð10k</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=50000&message=doge4water%20donation&label=doge4water" class="button bottom">Ð50k</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=100000&message=doge4water%20donation&label=doge4water" class="button bottom">Ð100k</a>
-						<a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i?amount=1000000&message=doge4water%20donation&label=doge4water" class="button bottom last">Ð1M</a>
-					</p>
+					<h2><strong>We reached our goal!!</strong></h2>
+					<p class="button"><a href="dogecoin:DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i">Funds are now being converted for delivery to our clean water partner charity:water.</a></p>
 				</div>
 
 				<div class="or">&mdash; or &mdash;</div>
 				<div class="donate-type">
 					<h2>Donate Dollars</h2>
+					<p>Missed out? Still want to donate? Send dollars.</p>
 					<p><a href="http://my.charitywater.org/doge4water" class="partner button">Donate via charity:water</a></p>
-					<h5>Twitter tips by <a href="http://tipdoge.info">tipdoge</a> to <a href="http://twitter.com/doge4water">@doge4water</a></h5>
 				</div>
 				<div id="learn-more">
 					<h2>Learn more</h2>
@@ -227,31 +214,12 @@
 		}
 		$(function() {
 			$($.doge);
-			message_append = ' of Ð40,000,000 donated so far!';
+			message_append = ' of Ð40,000,000 donated!';
 			target = '40000000';
-			balance = 0;
+			balance = 40000000;
 			tipdoge = 0;
-	    	address = "DNfFHTUZ4kkXPnoYUvgt6BGVwonEFB1b2i";	
-			$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20p%20from%20html%20where%20url%20%3D%20'http%3A%2F%2Fdogechain.info%2Fchain%2FDogecoin%2Fq%2Faddressbalance%2F" + address + "'&format=json", function(data) {
-	 			balance = parseInt(data.query.results.body.p);
-	 			$(".suchcurrency").fadeIn();
 
-				update_percentage(balance, target); 
-
-				console.log(balance);
-	 		});
-
-			$.getJSON( "http://tipdoge.info/api/?q=doge4water.org", function( data ) {
-				$.each( data, function( key, val ) {
-					if(! isNaN(val[1]))
-					{
-						tipdoge_balance = Math.ceil(val[1]);
-						balance += tipdoge_balance;
-						update_percentage(balance, target); 
-						console.log(balance);
-					}
-				});
-			});
+			update_percentage(balance, target); 
 
 	 		$('#learn-more').on('click', function() {
 				$('html').scrollTo('#page-content', 500);
