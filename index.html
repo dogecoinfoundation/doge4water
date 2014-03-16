@@ -209,6 +209,7 @@
 		function update_percentage(balance, target) {
 
 	 			percentage = (Math.floor(balance) / target)*100;
+	 			if (percentage > 100) percentage = 100;
 
 	 			$(".suchcurrency > span").text(Math.floor(balance).toLocaleString() + message_append);
 
@@ -225,7 +226,7 @@
 
 		}
 		$(function() {
-			// $($.doge);
+			$($.doge);
 			message_append = ' of Ð40,000,000 donated so far!';
 			target = '40000000';
 			balance = 0;
@@ -237,19 +238,20 @@
 
 				update_percentage(balance, target); 
 
-				setTimeout(function() {
-					$.getJSON( "http://tipdoge.info/api/?q=doge4water.org", function( data ) {
-						$.each( data, function( key, val ) {
-							if(! isNaN(val[1]))
-							{
-								tipdoge_balance = Math.ceil(val[1]);
-								balance += tipdoge_balance;
-								update_percentage(balance, target); 
-							}
-						});
-					});
-				}, 500);
+				console.log(balance);
 	 		});
+
+			$.getJSON( "http://tipdoge.info/api/?q=doge4water.org", function( data ) {
+				$.each( data, function( key, val ) {
+					if(! isNaN(val[1]))
+					{
+						tipdoge_balance = Math.ceil(val[1]);
+						balance += tipdoge_balance;
+						update_percentage(balance, target); 
+						console.log(balance);
+					}
+				});
+			});
 
 	 		$('#learn-more').on('click', function() {
 				$('html').scrollTo('#page-content', 500);
